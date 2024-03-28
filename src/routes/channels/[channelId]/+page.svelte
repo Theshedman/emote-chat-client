@@ -27,7 +27,7 @@
 	}
 
 	onMount(() => {
-		socket = new WebSocket(`ws://${chatServerWebsocketBaseURL}/chat?auth=` + $userStore?.token);
+		socket = new WebSocket(`wss://${chatServerWebsocketBaseURL}/chat?auth=` + $userStore?.token);
 
 		socket.addEventListener('open', () => {
 			console.log('Opened');
