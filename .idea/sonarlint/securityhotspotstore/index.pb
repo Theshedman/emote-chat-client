@@ -137,3 +137,5 @@ A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+>
+build/index.js,b\1\b13e722c22b8ed4288d9972d92b260aee6cffbf9

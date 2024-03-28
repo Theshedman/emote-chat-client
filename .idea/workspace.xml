@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e072d2b-f930-490a-bc5e-0602308d5c03" name="Changes" comment="cicd: update Dockerfile">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5e072d2b-f930-490a-bc5e-0602308d5c03" name="Changes" comment="cicd: update the Dockerfile command" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711444241802</updated>
-      <workItem from="1711444257268" duration="108790000" />
+      <workItem from="1711444257268" duration="109127000" />
     </task>
     <task id="LOCAL-00001" summary="cicd: setup ci-cd pipeline">
       <option name="closed" value="true" />
@@ -125,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711665097643</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="cicd: update the Dockerfile command">
+      <option name="closed" value="true" />
+      <created>1711665747634</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711665747634</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +140,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cicd: setup ci-cd pipeline" />
     <MESSAGE value="cicd: update Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="cicd: update Dockerfile" />
+    <MESSAGE value="cicd: update the Dockerfile command" />
+    <option name="LAST_COMMIT_MESSAGE" value="cicd: update the Dockerfile command" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

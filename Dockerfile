@@ -25,6 +25,8 @@ WORKDIR /app
 # Copy built app from the previous stage
 COPY --from=build /app/build /app/build
 
+COPY package*.json /app/build
+
 # Expose the port that the SvelteKit app runs on
 EXPOSE 3000
 
