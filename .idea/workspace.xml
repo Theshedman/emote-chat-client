@@ -4,28 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e072d2b-f930-490a-bc5e-0602308d5c03" name="Changes" comment="cicd: setup ci-cd pipeline">
-      <change afterPath="$PROJECT_DIR$/.chart/.helmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.chart/Chart.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.chart/templates/NOTES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.chart/templates/_helpers.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.chart/templates/cluster-issuer.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.chart/templates/deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.chart/templates/ingress.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.chart/templates/service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.chart/values.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/aks-helm-pipeline.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/+layout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+    <list default="true" id="5e072d2b-f930-490a-bc5e-0602308d5c03" name="Changes" comment="cicd: update Dockerfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,8 +107,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711444241802</updated>
-      <workItem from="1711444257268" duration="107484000" />
+      <workItem from="1711444257268" duration="108790000" />
     </task>
+    <task id="LOCAL-00001" summary="cicd: setup ci-cd pipeline">
+      <option name="closed" value="true" />
+      <created>1711664027885</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711664027885</updated>
+    </task>
+    <task id="LOCAL-00002" summary="cicd: update Dockerfile">
+      <option name="closed" value="true" />
+      <created>1711665097643</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711665097643</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +133,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cicd: setup ci-cd pipeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="cicd: setup ci-cd pipeline" />
+    <MESSAGE value="cicd: update Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="cicd: update Dockerfile" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

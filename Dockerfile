@@ -29,4 +29,4 @@ COPY --from=build /app/build /app/build
 EXPOSE 3000
 
 # Command to run the SvelteKit app
-CMD ["node", "./build"]
+CMD ["HOST=127.0.0.1", "node", "-r", "dotenv/config", "./build"]
