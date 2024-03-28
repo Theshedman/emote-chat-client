@@ -6,7 +6,6 @@
 	import { goto } from '$app/navigation';
 	import { checkTokenExpiration, isAuthenticated } from '$lib/stores/auth';
 
-	export const ssr = false;
 
 	function loadInitialPage() {
 		if($isAuthenticated) {

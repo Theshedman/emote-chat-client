@@ -1,0 +1,35 @@
+nameOverride: ""
+fullNameOverride: ""
+serviceAccount:
+  name: ""
+  create: false
+
+app:
+  name: "emote-chat-client"
+  env: staging
+
+  secret:
+    name: emote-chat-client-secrets
+
+  labels:
+    tier: backend
+    role: service
+
+  volume:
+    secret:
+      name: "secret-volume"
+
+  image: ""
+
+  container:
+    port: 3000
+    portName: container-port
+  replicas: 1
+
+  resources:
+    requests:
+      memory: "400Mi"
+      cpu: "200m"
+    limits:
+      memory: "450Mi"
+      cpu: "250m"

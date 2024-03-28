@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "emote-chat-client.name" . }}
+  labels:
+    {{- include "emote-chat-client.labels" . | nindent 4 }}
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  replicas: {{ .Values.app.replicas }}
+  selector:
+    matchLabels:
+      app: {{ include "emote-chat-client.name" . }}
+  template:
+    metadata:
+      labels:
+        {{- include "emote-chat-client.labels" . | nindent 8 }}
+    spec:
+      containers:
+      -  name: {{ .Values.app.name | quote }}
+         image: {{ printf "%s" .Values.app.image }}
+         ports:
+         -  name: {{ .Values.app.container.portName }}
+            containerPort: {{ .Values.app.container.port }}
+      imagePullSecrets:
+        - name: image-registry
