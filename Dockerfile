@@ -5,16 +5,16 @@ FROM node:lts-alpine AS build
 WORKDIR /app
 
 # Copy package.json and yarn.lock to the working directory
-COPY package.json yarn.lock ./
+COPY package*.json ./
 
 # Install dependencies
-RUN yarn install
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
 
 # Build the SvelteKit app
-RUN yarn build
+RUN npm run build
 
 # Use a lightweight Node.js image for the final build
 FROM node:lts-alpine
