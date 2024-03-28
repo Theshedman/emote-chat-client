@@ -31,4 +31,4 @@ COPY package*.json /app/build/
 EXPOSE 3000
 
 # Command to run the SvelteKit app
-CMD ["HOST=127.0.0.1", "node", "-r", "dotenv/config", "./build"]
+CMD ["node", "-r", "dotenv/config", "./build"]
