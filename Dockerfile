@@ -1,5 +1,5 @@
 # Use Node.js base image
-FROM node:lts-alpine AS build
+FROM node:lts-alpine
 
 # Set working directory
 WORKDIR /app
@@ -15,17 +15,6 @@ COPY . .
 
 # Build the SvelteKit app
 RUN npm run build
-
-# Use a lightweight Node.js image for the final build
-FROM node:lts-alpine
-
-# Set working directory
-WORKDIR /app
-
-# Copy built app from the previous stage
-COPY --from=build /app/build /app/build
-
-COPY package*.json /app/build/
 
 # Expose the port that the SvelteKit app runs on
 EXPOSE 3000
