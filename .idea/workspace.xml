@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e072d2b-f930-490a-bc5e-0602308d5c03" name="Changes" comment="cicd: remove host from the command">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    <list default="true" id="5e072d2b-f930-490a-bc5e-0602308d5c03" name="Changes" comment="fix: connect to socket over secure websocket connection">
+      <change beforePath="$PROJECT_DIR$/src/routes/channels/[channelId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/channels/[channelId]/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711444241802</updated>
-      <workItem from="1711444257268" duration="110109000" />
+      <workItem from="1711444257268" duration="110557000" />
     </task>
     <task id="LOCAL-00001" summary="cicd: setup ci-cd pipeline">
       <option name="closed" value="true" />
@@ -157,7 +157,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711667517130</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="cicd: remove multi-build from Dockerfile">
+      <option name="closed" value="true" />
+      <created>1711667787747</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711667787747</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: connect to socket over secure websocket connection">
+      <option name="closed" value="true" />
+      <created>1711668195266</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711668195266</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +186,9 @@
     <MESSAGE value="cicd: copy package.json to the build folder of the image" />
     <MESSAGE value="cicd: fix copy wrong path" />
     <MESSAGE value="cicd: remove host from the command" />
-    <option name="LAST_COMMIT_MESSAGE" value="cicd: remove host from the command" />
+    <MESSAGE value="cicd: remove multi-build from Dockerfile" />
+    <MESSAGE value="fix: connect to socket over secure websocket connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: connect to socket over secure websocket connection" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
