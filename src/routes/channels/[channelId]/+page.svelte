@@ -2,47 +2,88 @@
 	<title>Emote:Chat</title>
 </svelte:head>
 
-<script>
-	import Channel from '$lib/Channel.svelte';
-	import ChatHeader from '$lib/ChatHeader.svelte';
-	import Chat from '$lib/Chat.svelte';
-	import userStore from '$lib/stores/userStore';
-	import contactStore from '$lib/stores/contactStore';
-	import { formatDistanceToNow } from 'date-fns';
-	import { chatServerWebsocketBaseURL } from '$lib/config';
-	import ContactHeader from '$lib/ContactHeader.svelte';
-	import ChatInput from '$lib/ChatInput.svelte';
+<script lang="ts">
 	import { onMount } from 'svelte';
+	import Chat from '$lib/Chat.svelte';
+	import Channel from '$lib/Channel.svelte';
+	import type { ChatMessage } from '$lib/chat';
+	import userStore from '$lib/stores/userStore';
+	import ChatInput from '$lib/ChatInput.svelte';
+	import { formatDistanceToNow } from 'date-fns';
+	import ChatHeader from '$lib/ChatHeader.svelte';
+	import ContactHeader from '$lib/ContactHeader.svelte';
+	import contactStore, { type Contact } from '$lib/stores/contactStore';
+	import { chatServerWebsocketBaseURL, websocketProtocol } from '$lib/config';
+	import { goto } from '$app/navigation';
 
 	/** @type {import('./$types').PageData} */
-	export let data;
+	export let data: {
+		activeContact: Contact;
+		contacts: Contact[];
+		channelId: string ,
+		activeContactMessages: ChatMessage[]
+	};
 
-	let newMessage = '';
-	let messages = []
-	let socket;
+	let messages: ChatMessage[] = []
+
+	let socket: WebSocket;
+	let reconnectAttempts = 0;
+	const MAX_RECONNECT_ATTEMPTS = 6;
+	const RECONNECT_INTERVAL = 3000; // 3 seconds
 
 	$: {
-		data = { ...data, contacts: $contactStore };
+		data = { ...data, contacts: $contactStore as Contact[] };
 		messages = [...data.activeContactMessages]
 	}
 
 	onMount(() => {
-		socket = new WebSocket(`wss://${chatServerWebsocketBaseURL}/chat?auth=` + $userStore?.token);
+		connectToWebsocket();
+
+		return () => {
+			// Cleanup on component unmount
+			socket.close();
+		};
+	});
+
+	function connectToWebsocket() {
+		const url = `${websocketProtocol}://${chatServerWebsocketBaseURL}/chat?auth=${$userStore?.token}`;
+		socket = new WebSocket(url);
 
 		socket.addEventListener('open', () => {
-			console.log('Opened');
+			console.log('Websocket connection successful...');
+
+			reconnectAttempts = 0; // Reset attempts on success
 		});
 
-		socket.addEventListener('message', (event) => {
+		socket.addEventListener('message', event => {
 			const message = JSON.parse(event.data); // Assuming server sends JSON data
 
 			messages = [...messages, message]; // Add new message to the array
 		});
 
-		socket.addEventListener('error', (error) => {
-			console.log('Error occurred: ', error);
+		socket.addEventListener('error', () => {
+			console.error('Websocket connection error occurred...');
 		});
-	});
+
+		socket.addEventListener('close', () => {
+			console.log('WebSocket closed, attempting to reconnect...');
+
+			scheduleReconnect();
+		});
+	}
+
+	function scheduleReconnect() {
+		if (reconnectAttempts < MAX_RECONNECT_ATTEMPTS) {
+			setTimeout(() => {
+				connectToWebsocket();
+				reconnectAttempts++;
+			}, RECONNECT_INTERVAL);
+		} else {
+			console.error('Maximum reconnect attempts reached for websocket');
+			goto("/login")
+			// (Optional) - Notify the user about the issue
+		}
+	}
 </script>
 
 <div class="flex h-screen overflow-hidden">
@@ -56,6 +97,7 @@
 			{#if data?.contacts?.length > 0}
 				{#each data.contacts as contact (contact?.id)}
 					<Channel
+						chatType={contact?.type}
 						channelId={contact?.id}
 						roomName={contact?.name}
 						lastMessage="Open to chat" />

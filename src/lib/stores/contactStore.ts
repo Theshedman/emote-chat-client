@@ -5,24 +5,33 @@ export type Channel = {
 	name: string;
 }
 
-export type User = {
-	data: {
-		id: string;
-		firstName: string;
-		lastName: string;
-		username: string;
-	}
+export type Contact = {
+	id: string;
+	name?: string;
+	firstName?: string;
+	lastName?: string;
+	type: 'private' | 'group';
+	participants: string[];
 }
 
 function createChatContact() {
-		const { subscribe, set, update } = writable(null);
+		const { subscribe, set, update } = writable<Contact[]|null>(null);
 
 		return {
 			subscribe,
-			setContact: (contact) => {
+			setContact: (contact: Contact[]) => {
 				set(contact);
 			},
-			updateContact: (contact) => {
+			deleteContact: (contactId: string) => {
+				update(val => {
+					if (val) {
+						return val.filter(v => v.id != contactId);
+					}
+
+					return val;
+				})
+			},
+			updateContact: (contact: Contact[]) => {
 				update(val => {
 					if (val) {
 						val = [...contact, ...val]

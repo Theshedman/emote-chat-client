@@ -5,8 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e072d2b-f930-490a-bc5e-0602308d5c03" name="Changes" comment="cicd: disable https redirect temporarily">
-      <change beforePath="$PROJECT_DIR$/.chart/templates/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.chart/templates/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/2/02d1c564ee3f0d1aa7491065d3f23b8ce4276f76" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/056d81959ef1d2bb251116211a9bef6d7673b61f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/e/0e310fc674b0cc2ad79e6642507a240dfd2da448" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0fc5023a80651be4a3daf79790ada467f95ae7b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e79d5cc35fa3910c8fd02ac55776b5aa53012a1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/320761608fb328e3fa61a9414e2fce375ca58442" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/320761608fb328e3fa61a9414e2fce375ca58442" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/528961a35301c9e3b3b90a2d086f96e04b86ae0c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/552ef1141aa1e2fbd175a58bf06842f74b00a20d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5c0b7adad0b4afac8dc49de17d8e3ff327bb7065" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5c0b7adad0b4afac8dc49de17d8e3ff327bb7065" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64e3a5f50fec29ea17e03a322edacb7ab89c002c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/5/951bd432c81eca873bc626aa1e9593f9048e78ae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/993eb003f56d1f14925a514fbfaed415fe74a69a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a4331dc7a7307c7806717c797da360da8eccefb8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aa4e91f030022fe145e5a6ab710004fdc921869d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b8083d391d77670a7b7ed46f8c75830a69416647" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/2/d21915e1d489ba78921aa1f2ede7332c783e57b0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e1493af8d7422c79a133557d37997b0bcc5a3ebd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/2/02d1c564ee3f0d1aa7491065d3f23b8ce4276f76" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/5/056d81959ef1d2bb251116211a9bef6d7673b61f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/e/0e310fc674b0cc2ad79e6642507a240dfd2da448" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/f/0fc5023a80651be4a3daf79790ada467f95ae7b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/e/1e79d5cc35fa3910c8fd02ac55776b5aa53012a1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/2/528961a35301c9e3b3b90a2d086f96e04b86ae0c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/5/552ef1141aa1e2fbd175a58bf06842f74b00a20d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/4/64e3a5f50fec29ea17e03a322edacb7ab89c002c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/5/951bd432c81eca873bc626aa1e9593f9048e78ae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/9/993eb003f56d1f14925a514fbfaed415fe74a69a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/4/a4331dc7a7307c7806717c797da360da8eccefb8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/a/aa4e91f030022fe145e5a6ab710004fdc921869d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/8/b8083d391d77670a7b7ed46f8c75830a69416647" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/2/d21915e1d489ba78921aa1f2ede7332c783e57b0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/1/e1493af8d7422c79a133557d37997b0bcc5a3ebd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Channel.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Channel.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/ChatInput.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ChatInput.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/ContactHeader.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ContactHeader.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Login.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Login.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Signup.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Signup.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stores/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/stores/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stores/contactStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/stores/contactStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stores/userStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/stores/userStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/channels/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/channels/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/channels/+page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/channels/+page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/channels/[channelId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/channels/[channelId]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/channels/[channelId]/+page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/channels/[channelId]/+page.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,49 +83,50 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="t2buxvgj" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2eDfnFeiBYrcGTETMfHIwnHi71P" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "aspect.path.notification.shown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Thesh/Documents/projects/emote-chat",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.first.attach.projects.stats": "true",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "show.migrate.to.gradle.popup": "false",
-    "ts.external.directory.path": "C:\\Users\\Thesh\\Documents\\projects\\emote-chat\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;aspect.path.notification.shown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Thesh/Documents/projects/emote-chat&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Debug&quot;,
+    &quot;org.rust.first.attach.projects.stats&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Thesh\\Documents\\projects\\emote-chat\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -100,6 +149,23 @@
       <recent name="C:\Users\Thesh\Documents\projects\emote-chat\static" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -109,6 +175,8 @@
       <option name="presentableId" value="Default" />
       <updated>1711444241802</updated>
       <workItem from="1711444257268" duration="111172000" />
+      <workItem from="1711742301124" duration="28998000" />
+      <workItem from="1711780881623" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="cicd: setup ci-cd pipeline">
       <option name="closed" value="true" />
@@ -209,7 +277,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/lib/types/message.ts</url>
           <line>4</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
 	import userStore from '$lib/stores/userStore';
 	import { chatServerHttpBaseURL } from '$lib/config';
+	import { onMount } from 'svelte';
 
 	let username = ''
 	let password = ''
-	let currentError = null;
 
 	const login = () => {
 		fetch(`${chatServerHttpBaseURL}/auth/login`, {
@@ -20,20 +20,20 @@
 		})
 			.then(res => {
 				if (res.status < 299) return res.json()
-
-				currentError = "Something went wrong"
 			})
 			.then(data => {
-				if (data) userStore.setUser(data)
+				if (data) userStore?.setUser(data)
 
 				goto('/channels');
 			})
 			.catch(error => {
-				currentError = error
-
 				console.log("Error logging in: ", error);
 			})
 	}
+
+	let inputElement: HTMLInputElement;
+
+	onMount(() => inputElement.focus())
 </script>
 
 <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -56,6 +56,7 @@
 				</label>
 				<div class="mt-2">
 					<input
+						bind:this={inputElement}
 						bind:value={username}
 						id="username"
 						name="username"
@@ -73,7 +74,7 @@
 						Password
 					</label>
 					<div class="text-sm">
-						<a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">
+						<a href="/login" class="font-semibold text-indigo-600 hover:text-indigo-500">
 							Forgot password?
 						</a>
 					</div>

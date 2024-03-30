@@ -9,7 +9,8 @@ export async function checkTokenExpiration() {
 	const unsubscribe = userStore?.subscribe(user => authUser = user);
 
 	if (authUser) {
-		console.log({authUser});
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-expect-error
 		if (isTokenExpired(authUser?.token)) {
 			// Token is expired, log the user out
 			userStore?.clearUser()
@@ -20,6 +21,8 @@ export async function checkTokenExpiration() {
 		} else {
 			isAuthenticated.set(true);
 			// (Optional) Schedule the next expiration check
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-expect-error
 			scheduleExpirationCheck(extractExpTimeFromToken(authUser?.token));
 		}
 	}
@@ -29,13 +32,13 @@ export async function checkTokenExpiration() {
 	}
 }
 
-function extractExpTimeFromToken(token) {
+function extractExpTimeFromToken(token: string) {
 	const payload = JSON.parse(atob(token.split('.')[1]));
 
 	return payload.exp;
 }
 
-function isTokenExpired(token) {
+function isTokenExpired(token: string) {
 	try {
 		// Decode the payload (assuming JWT)
 		const exp = extractExpTimeFromToken(token);
@@ -49,7 +52,7 @@ function isTokenExpired(token) {
 	}
 }
 
-function scheduleExpirationCheck(expirationTime) {
+function scheduleExpirationCheck(expirationTime: number) {
 	const now = Date.now();
 	const delay = expirationTime - now; // Calculate time till expiration
 
@@ -57,3 +60,5 @@ function scheduleExpirationCheck(expirationTime) {
 		await checkTokenExpiration();
 	}, delay);
 }
+
+checkTokenExpiration().then(() => {})

@@ -2,18 +2,20 @@
 	<title>Emote:Channel</title>
 </svelte:head>
 
-<script>
+<script lang="ts">
 	import Channel from '$lib/Channel.svelte';
-	import ChatHeader from '$lib/ChatHeader.svelte';
 	import ChatInput from '$lib/ChatInput.svelte';
+	import ChatHeader from '$lib/ChatHeader.svelte';
 	import ContactHeader from '$lib/ContactHeader.svelte';
-	import contactStore from '$lib/stores/contactStore';
+	import contactStore, { type Contact } from '$lib/stores/contactStore';
 
-	let contacts = []
+	let contacts: Contact[] = []
 
 	$: {
-		contacts = $contactStore
+		contacts = $contactStore as Contact[]
 	}
+
+	const voidSocket: WebSocket = {} as WebSocket;
 </script>
 
 <div class="flex h-screen overflow-hidden">
@@ -23,7 +25,7 @@
 
 		<!-- Contact/Channel List -->
 		<div class="overflow-y-auto h-screen p-3 mb-9 pb-20">
-			{#each contacts as contact (contact.id)}
+			{#each contacts as contact (contact?.id)}
 				<Channel
 					channelId={contact?.id}
 					roomName={contact?.name}
@@ -45,7 +47,7 @@
 		<!-- Chat Input -->
 		<footer class="bg-white border-t border-gray-300 p-4 absolute bottom-0 w-3/4">
 			<ChatInput
-				socket={()=> {}}
+				socket={voidSocket}
 				status="disabled"
 				channelId=""
 			/>

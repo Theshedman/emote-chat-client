@@ -1,9 +1,12 @@
-<script>
+<script lang="ts">
+	import { onMount } from 'svelte';
+
 	export let status = 'disabled';
-	export let socket;
+	export let socket: WebSocket;
 	export let channelId = ''
 
 	let newMessage = '';
+
 
 	function sendMessage() {
 		// ... Send the new message to the server through the WebSocket
@@ -14,16 +17,21 @@
 		newMessage = '';
 	}
 
-	function handleKeydownForChat(event) {
+	function handleKeydownForChat(event: KeyboardEvent) {
 		if (event.key === 'Enter' || event.code === 'Enter') {
 			sendMessage();
 		}
 	}
+
+	let inputElement: HTMLInputElement;
+
+	onMount(() => inputElement?.focus())
 </script>
 
 {#if status === 'enabled'}
 	<div class="flex items-center">
 		<input
+			bind:this={inputElement}
 			type="text"
 			placeholder="Type a message..."
 			class="w-full p-2 rounded-md border border-gray-400 focus:outline-none focus:border-blue-500"

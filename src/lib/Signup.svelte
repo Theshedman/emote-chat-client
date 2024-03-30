@@ -1,13 +1,13 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
-	import userStore from '$lib/stores/userStore';
+	import userStore, { type User } from '$lib/stores/userStore';
 	import { chatServerHttpBaseURL } from '$lib/config';
+	import { onMount } from 'svelte';
 
 	let firstName = ''
 	let lastName = ''
 	let username = ''
 	let password = ''
-	let currentError = null;
 
 	const signup = () => {
 		fetch(`${chatServerHttpBaseURL}/auth/signup`, {
@@ -24,20 +24,20 @@
 		})
 			.then(res => {
 				if (res.status < 299) return res.json()
-
-				currentError = "Something went wrong"
 			})
-			.then(data => {
-				if (data) userStore.setUser(data)
+			.then((data: User) => {
+				if (data) userStore?.setUser(data)
 
 				goto("/channels")
 			})
 			.catch(error => {
-				currentError = error
-
-				console.log("Error logging in: ", error);
+				console.log("Error signing up: ", error);
 			})
 	}
+
+	let inputElement: HTMLInputElement;
+
+	onMount(() => inputElement.focus())
 </script>
 
 <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-8 lg:px-8">
@@ -60,6 +60,7 @@
 				</label>
 				<div class="mt-1.5">
 					<input
+						bind:this={inputElement}
 						bind:value={firstName}
 						id="firstName"
 						name="firstName"
