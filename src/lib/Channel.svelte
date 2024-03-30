@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import userStore from './stores/userStore';
+	import { fetchActiveContactAndChatHistories, getContactName } from './channel';
 	import { chatServerHttpBaseURL } from './config';
-	import contactStore from './stores/contactStore';
+	import contactStore, { type Contact } from './stores/contactStore';
+	import chatHistoryStore from './stores/chatHistories';
 
 	export let roomName;
 	export let lastMessage = '';
@@ -21,15 +23,26 @@
 				const privateGroupChat = await response.json();
 
 				if (privateGroupChat?.data) {
-					contactStore.deleteContact(channelId);
-					contactStore.updateContact([privateGroupChat.data]);
+					const newPrivateContact: Contact = privateGroupChat.data;
+					newPrivateContact.name = await getContactName(newPrivateContact, $userStore?.data?.id as string, $userStore?.token as string);
 
-					channelId = privateGroupChat.data.id;
+					contactStore.deleteContact(channelId);
+					contactStore.updateContact([newPrivateContact]);
+
+					channelId = newPrivateContact.id;
 				}
 			} catch (e: unknown) {
 				console.log('Unable to join private chat: ', e);
 			}
 		}
+
+		const chatHistories = await fetchActiveContactAndChatHistories(
+			channelId,
+			$userStore?.data?.id as string,
+			$userStore?.token as string
+		);
+
+		chatHistoryStore.setChatHistory(chatHistories);
 
 		await goto(`/channels/${channelId}`);
 	}

@@ -1,6 +1,8 @@
 import { goto } from '$app/navigation';
 import { chatServerHttpBaseURL } from './config';
 import contactStore, { type Contact } from './stores/contactStore';
+import type { ChatMessage } from './chat';
+import type { ChatHistory } from './stores/chatHistories';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export async function getContactsAndStoreThem(currentUserId: string, authToken: string, fetch: Function): Promise<Contact[]> {
@@ -51,7 +53,7 @@ export async function getContactsAndStoreThem(currentUserId: string, authToken: 
 }
 
 
-async function getContactName(contact: Contact, currentUserId: string, authToken: string): Promise<string> {
+export async function getContactName(contact: Contact, currentUserId: string, authToken: string): Promise<string> {
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-expect-error
 	let otherUser: typeof User.data = null;
@@ -85,4 +87,35 @@ async function findUserById(userId: string, authToken: string) {
 	const userData = await userResponse.json();
 
 	return userData.data;
+}
+
+export async function fetchActiveContactAndChatHistories(
+	channelId: string, currentUserId: string, authToken: string
+): Promise<ChatHistory> {
+
+	const msgResponse = await fetch(`${chatServerHttpBaseURL}/messages?roomId=${channelId}&limit=100`, {
+		headers: {
+			Authorization: `Bearer ${authToken}`
+		}
+	});
+
+	if (msgResponse?.status === 401) {
+		await goto("/login")
+	}
+
+	const activeContactResponse = await fetch(`${chatServerHttpBaseURL}/rooms/${channelId}`, {
+		headers: {
+			Authorization: `Bearer ${authToken}`
+		}
+	})
+
+	const messages = await msgResponse?.json()
+	const activeContactData = await activeContactResponse?.json()
+	const activeContact = activeContactData.data
+	activeContact.name = await getContactName(activeContact, currentUserId, authToken);
+
+	return {
+		activeContact,
+		activeMessages: messages?.data || []
+	}
 }

@@ -113,3 +113,5 @@ B
 src/lib/channel.ts,b\2\b2aad7b73a09b0c7ed69f2e12513c90deb45057a
 ?
 src/lib/chat.ts,5\7\57de31e3d4d7752c4806ce2f9f89f218584d4316
+O
+src/lib/stores/chatHistories.ts,d\d\ddb62b452c843207254c822e99f210e11d2c0263

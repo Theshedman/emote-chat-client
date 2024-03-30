@@ -15,16 +15,18 @@
 	import contactStore, { type Contact } from '$lib/stores/contactStore';
 	import { chatServerWebsocketBaseURL, websocketProtocol } from '$lib/config';
 	import { goto } from '$app/navigation';
+	import chatHistoryStore from '$lib/stores/chatHistories';
 
 	/** @type {import('./$types').PageData} */
 	export let data: {
-		activeContact: Contact;
+		channelId: string;
 		contacts: Contact[];
-		channelId: string ,
-		activeContactMessages: ChatMessage[]
+		activeContact: Contact;
 	};
 
 	let messages: ChatMessage[] = []
+	let activeMessageHistories: ChatMessage[] = []
+	let activeContact: Contact;
 
 	let socket: WebSocket;
 	let reconnectAttempts = 0;
@@ -32,8 +34,10 @@
 	const RECONNECT_INTERVAL = 3000; // 3 seconds
 
 	$: {
-		data = { ...data, contacts: $contactStore as Contact[] };
-		messages = [...data.activeContactMessages]
+		activeContact = $chatHistoryStore?.activeContact as Contact
+		activeMessageHistories = $chatHistoryStore?.activeMessages as ChatMessage[]
+		data = { ...data, activeContact, contacts: $contactStore as Contact[] };
+		messages = [...activeMessageHistories]
 	}
 
 	onMount(() => {
@@ -56,7 +60,7 @@
 		});
 
 		socket.addEventListener('message', event => {
-			const message = JSON.parse(event.data); // Assuming server sends JSON data
+			const message = JSON.parse(event.data);
 
 			messages = [...messages, message]; // Add new message to the array
 		});
