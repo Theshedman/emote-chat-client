@@ -9,10 +9,10 @@
 	import ContactHeader from '$lib/ContactHeader.svelte';
 	import contactStore, { type Contact } from '$lib/stores/contactStore';
 
-	let contacts: Contact[] = []
+	let contacts: Contact[] = [];
 
 	$: {
-		contacts = $contactStore as Contact[]
+		contacts = $contactStore as Contact[];
 	}
 
 	const voidSocket: WebSocket = {} as WebSocket;
@@ -20,13 +20,14 @@
 
 <div class="flex h-screen overflow-hidden">
 	<!-- Sidebar -->
-	<div class="w-1/4 bg-white border-r border-gray-300">
+	<div class="w-1/4 bg-white border-r border-gray-300 ">
 		<ContactHeader />
 
 		<!-- Contact/Channel List -->
 		<div class="overflow-y-auto h-screen p-3 mb-9 pb-20">
 			{#each contacts as contact (contact?.id)}
 				<Channel
+					chatType={contact?.type}
 					channelId={contact?.id}
 					roomName={contact?.name}
 					lastMessage="Open to chat" />
