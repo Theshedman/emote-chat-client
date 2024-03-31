@@ -20,7 +20,7 @@
 
 <div class="flex h-screen overflow-hidden">
 	<!-- Sidebar -->
-	<div class="w-1/4 bg-white border-r border-gray-300 ">
+	<div class="w-1/4 bg-white border-r border-gray-300">
 		<ContactHeader />
 
 		<!-- Contact/Channel List -->
