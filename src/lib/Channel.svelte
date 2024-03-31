@@ -7,11 +7,14 @@
 	import chatHistoryStore from './stores/chatHistories';
 
 	export let roomName;
-	export let lastMessage = '';
 	export let channelId = '';
+	export let lastMessage = '';
 	export let chatType: 'private' | 'group';
+	export let toggleContacts: Function;
 
 	async function activateChat() {
+		toggleContacts && toggleContacts();
+
 		if (chatType !== 'private' && chatType !== 'group') {
 			try {
 				const response = await fetch(`${chatServerHttpBaseURL}/rooms/private/join?targetParticipant=${channelId}`, {

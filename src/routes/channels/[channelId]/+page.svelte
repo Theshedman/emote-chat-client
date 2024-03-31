@@ -16,6 +16,7 @@
 	import { chatServerWebsocketBaseURL, websocketProtocol } from '$lib/config';
 	import { goto } from '$app/navigation';
 	import chatHistoryStore from '$lib/stores/chatHistories';
+	import ContactList from '$lib/ContactList.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: {
@@ -88,35 +89,28 @@
 			// (Optional) - Notify the user about the issue
 		}
 	}
+
+	let showContacts = false;
+
+	function toggleContacts() {
+		showContacts = !showContacts;
+	}
+	function resetToggle() {
+		showContacts = false;
+	}
 </script>
 
 <div class="flex h-screen overflow-hidden">
 	<!-- Sidebar -->
-	<div class="w-1/4 bg-white border-r border-gray-300">
-		<!-- Sidebar Header -->
-		<ContactHeader />
-
-		<!-- Contact/Channel List -->
-		<div class="overflow-y-auto h-screen p-3 mb-9 pb-20">
-			{#if data?.contacts?.length > 0}
-				{#each data.contacts as contact (contact?.id)}
-					<Channel
-						chatType={contact?.type}
-						channelId={contact?.id}
-						roomName={contact?.name}
-						lastMessage="Open to chat" />
-				{/each}
-			{/if}
-		</div>
-	</div>
+	<ContactList contacts= {data.contacts} {showContacts} {toggleContacts} />
 
 	<!-- Main Chat Area -->
 	<div class="flex-1">
 		<!-- Chat Header -->
-		<ChatHeader name={data?.activeContact?.name} />
+		<ChatHeader {toggleContacts} name={data?.activeContact?.name} />
 
 		<!-- Chat Messages -->
-		<div class="h-screen overflow-y-auto p-4 pb-36">
+		<div class="h-screen overflow-y-auto p-4 pb-36" on:keydown={resetToggle} on:click={resetToggle} role="button" tabindex=0>
 			{#each messages as message (message.id)}
 				<Chat
 					username={$userStore?.data?.username}
@@ -132,7 +126,7 @@
 		</div>
 
 		<!-- Chat Input -->
-		<footer class="bg-white border-t border-gray-300 p-4 absolute bottom-0 w-3/4">
+		<footer class="bg-white border-t border-gray-300 p-4 absolute bottom-0 w-screen md:w-3/4">
 			<ChatInput
 				socket={socket}
 				status="enabled"
